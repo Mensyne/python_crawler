@@ -43,7 +43,7 @@ def main(tieba_name, start_page, end_page):
 
 
 if __name__ == '__main__':
-    tieba_name = raw_input('请输入你要查找贴吧名')
-    start_page = int(raw_input('请输入查找的起始页'))
-    end_page = int(raw_input('请输入查找的结束页'))
+    tieba_name = input('请输入你要查找贴吧名')
+    start_page = int(input('请输入查找的起始页'))
+    end_page = int(input('请输入查找的结束页'))
     main(tieba_name, start_page, end_page)
