@@ -29,8 +29,8 @@ def send_request():
         proxy_handler = urllib2.ProxyHandler(proxy)
         opener = urllib2.build_opener(proxy_handler)
         response = opener.open(request)
-        print response.read()
-        print request.get_header("User-agent")
+        print(response.read())
+        print(request.get_header("User-agent"))
 
 if __name__ == '__main__':
     send_request()

@@ -5,10 +5,10 @@ s = 'abcd1234bcda4321'
 pattern = re.compile(r'\d+')
 m = pattern.search(s)
 print(m)
-print m.group()
+print((m.group()))
 pattern = re.compile("([a-z]+)\s([a-z]+)",re.I)# 表示忽略字符串字母大小写
 s1 = "Hello word, byebye World"
 m1 = pattern.search(s1)
-print m1.group(0)
+print((m1.group(0)))
 
 

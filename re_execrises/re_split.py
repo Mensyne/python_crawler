@@ -4,9 +4,9 @@ import re
 s = "a.. ,, .. ;;ab ..a"
 pattern =  re.compile(r'[\s\.;,]')
 result_list = pattern.split(s)
-print result_list
+print(result_list)
 pattern =  re.compile(r'[\s\.;,]+')
 result_list = pattern.split(s)
-print result_list
+print(result_list)
 
 

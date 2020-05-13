@@ -1,1 +1,15 @@
-# my crawler notes using python 
+## 该项目主要是记录自己学些爬虫的一些比较
+
+### 目前包含的内容有
+1. urllib,urllib2,request 请求库的学习总结
+
+2. bs4,pyquery,xml 解析库的学习总结
+
+3. selenium,pyppeteer 自动爬取库的学习总结
+
+4. 正则表达式库re 学习
+
+5. 百度搜索网站、百度贴吧、淘宝等网站的爬取
+
+
+~~ 后期有什么需求将继续加上

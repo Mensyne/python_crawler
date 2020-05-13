@@ -4,19 +4,19 @@ import urllib2
 
 
 def send_request(url):
-    print '正在抓取网页中.......'
+    print ('正在抓取网页中.......')
     try:
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'}
         request = urllib2.Request(url, headers = headers)
         response = urllib2.urlopen(request)
         return response.read()
     except Exception as e:
-        print e
+        print(e)
         return ''
 
 
 def write_html(html, filename):
-    print '[INFO]' + '正在写入文件中.......' + filename
+    print('[INFO]' + '正在写入文件中.......' + filename)
     with open(filename, 'w',) as f:
         f.write(html)
 
@@ -36,7 +36,7 @@ def main(tieba_name, start_page, end_page):
         query_data = {'kw':tieba_name,'pn':p}
         url_str = urllib.urlencode(query_data)
         full_url = base_url + url_str
-        print full_url
+        print (full_url)
         filename = tieba_name + str(page) + '.html'
         html = send_request(full_url)
         write_html(html, filename)

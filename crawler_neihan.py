@@ -12,10 +12,10 @@ class NeiHanSpider(object):
         self.pattern_page= re.compile('<div class="f18 mb20">(.*?)</div>',re.S)
         # 处理无用的字符
         # u"\u3000".encode("utf-8") 表示匹配全角中文空格
-        self.pattern_result = re.compile("<.*?>|&.*?;|\s|"+u"\u3000".encode("utf-8"))
+        self.pattern_result = re.compile("<.*?>|&.*?;|\s|"+"\u3000".encode("utf-8"))
 
     def send_request(self,url):
-        print "[INFO]正在发送请求"+url
+        print(("[INFO]正在发送请求"+url))
         proxy = {"http":"http://maozhaojun:ntkn0npx@114.67.224.167:16819"}
         html = requests.get(url,headers = self.headers,proxies = proxy).content
         html  =html.decode("gbk").encode('utf-8')
@@ -30,7 +30,7 @@ class NeiHanSpider(object):
             f.write("第"+str(self.page)+"页:\n")
             for result in result_list:
                 content = self.pattern_result.sub("",result)
-                print "[INFO]正在保存文本....."
+                print ("[INFO]正在保存文本.....")
                 f.write(content+"\n")
             f.write("\n\n")
 
@@ -43,12 +43,12 @@ class NeiHanSpider(object):
                 self.write_page(result_list)
                 self.page += 1
             except Exception as e:
-                print e
-                print "[ERROR]: 页面抓取失败" + full_url
+                print(e)
+                print("[ERROR]: 页面抓取失败" + full_url)
 
-            command = raw_input("按回车继续爬取（退出输入q）:")
+            command = input("按回车继续爬取（退出输入q）:")
             if command == 'q':
-                print "[INFO] 谢谢使用，再见!"
+                print ("[INFO] 谢谢使用，再见!")
                 break
 
 if __name__ == '__main__':
