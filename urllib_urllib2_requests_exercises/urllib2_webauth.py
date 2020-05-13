@@ -14,7 +14,7 @@ def send_request():
     # 构建自定义的opener对象
     opener = urllib2.build_opener(httpauth_handler)
     response = opener.open(url)
-    print response.read()
+    print(response.read())
 
 if __name__ == '__main__':
     send_request()

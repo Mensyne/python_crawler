@@ -17,6 +17,6 @@ text = '''
 html = etree.HTML(text)
 # 将字符串序列化HTML 文档
 result = etree.tostring(html)
-print result
+print(result)
 
 

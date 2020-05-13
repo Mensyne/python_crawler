@@ -53,7 +53,7 @@ print(type(response.history),response.history)
 # 转态码
 import requests
 response = requests.get('www.baidu.com')  
-if not response.sattus_code=200:
+if not response.sattus_code== 200:
     print("404 Not Found")
 
 # 文件上传
@@ -77,7 +77,7 @@ print(response.text)
 
 # 证书验证
 import requests
-form requests.packages import urllib3
+from  requests.packages import urllib3
 urllib3.disable_warnings()
 response= requests.get('www.baidu.com',verify=False)
 reponse =requests.get('www.baidu.com',cert=('/path/server.crt','/path/key'))

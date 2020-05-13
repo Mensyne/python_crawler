@@ -51,13 +51,13 @@ class TencentSpider(object):
         while self.page <5:
             next_link = self.parser_page(response)
             if next_link is None:
-                print "到了最后一页了"
+                print("到了最后一页了")
                 break
             else:
                 try:
                     response = self.send_request(next_link)
                 except:
-                    print '[Error]解析下一页失败'+next_link
+                    print('[Error]解析下一页失败'+next_link)
                 time.sleep(random.randint(1,3))
         self.write_page()
 

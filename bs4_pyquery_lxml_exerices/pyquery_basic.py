@@ -1,7 +1,8 @@
 #-*- coding:utf-8 -*-
 from pyquery import PyQuery as pq
 import sys
-reload(sys)
+import importlib
+importlib.reload(sys)
 sys.setdefaultencoding("utf-8")
 # 字符串初始化
 html= '''
@@ -17,10 +18,10 @@ html= '''
 '''
 doc = pq(html)
 # 获取所有li标签
-print doc("li")
+print(doc("li"))
 # URL初始化
 doc1 = pq(url="http://cuiqingcai.com")
-print doc1('title')
+print(doc1('title'))
 
 # 基本CSS 选择器
 html2 = '''
@@ -36,24 +37,24 @@ html2 = '''
 '''
 
 doc2 = pq(html2)
-print "-"*50
-print doc2("#container .list li")
-print type(doc2("#container .list li"))
+print("-"*50)
+print(doc2("#container .list li"))
+print(type(doc2("#container .list li")))
 
 
-print "-"*100
+print("-"*100)
 items = doc2(".list")
-print type(items)
-print items
+print(type(items))
+print(items)
 lis = items.find('li')
-print type(lis)
-print lis
+print(type(lis))
+print(lis)
 
-print "-"*100
+print("-"*100)
 lis = items.children()
-print lis
+print(lis)
 
-print "-"*100
+print("-"*100)
 
 html3 = '''
 <div class="wrap">
@@ -70,16 +71,16 @@ html3 = '''
 '''
 doc3 = pq(html3)
 li  = doc3('.item-0 active')
-print li
-print str(li)
+print(li)
+print(str(li))
 
 
-print "-"*100
+print("-"*100)
 # 多个节点 使用items
 doc = pq(html3)
-lis = doc("li").items()
+lis = list(doc("li").items())
 for li in lis:
-    print li , type(li)
+    print(li , type(li))
 
 # 获取属性-attr()属性
 html4 = '''
@@ -97,20 +98,20 @@ html4 = '''
 '''
 doc  = pq(html4)
 a = doc('.item-0.active a')
-print "-"*100
-print a,type(a)
-print "-"*100
+print("-"*100)
+print(a,type(a))
+print("-"*100)
 #attr()方法，只会得到第一个节点的属性。
-print a.attr('href')
+print(a.attr('href'))
 
-print "-"*100
-print a.attr.href
+print("-"*100)
+print(a.attr.href)
 
-print "-"*100
+print("-"*100)
 doc = pq(html4)
 a = doc('a')
-for item in a.items():
-    print(item.attr('href'))
+for item in list(a.items()):
+    print((item.attr('href')))
 
 # 获取文本---text()
 
@@ -132,8 +133,8 @@ from pyquery import PyQuery as pq
 doc = pq(html)
 a = doc('.item-0.active a')
 print(a)
-print "-"*100
-print(a.text())
+print("-"*100)
+print((a.text()))
 
 #获取文本
 html5 = '''
@@ -152,18 +153,18 @@ html5 = '''
 from pyquery import PyQuery as pq
 doc = pq(html5)
 a = doc('.item-0.active a')
-print a
-print "-"*100
-print a.text()
+print(a)
+print("-"*100)
+print(a.text())
 
 # 要获取这个节点内部的HTML文本，就要用html()方法
 li = doc('li')
 print(li)
-print "-"*100
-print li.html()
+print("-"*100)
+print(li.html())
 #html()方法返回的是第一个li节点的内部HTML文本，而text()则返回了所有的li节点内部的纯文本
-print "-"*100
-print li.text()
+print("-"*100)
+print(li.text())
 
 # CSS选择器
 html6 = '''
@@ -181,19 +182,19 @@ html6 = '''
 '''
 doc = pq(html6)
 li = doc('li:first-child')
-print li
+print(li)
 li2 = doc('li:last-child')
-print "-"*100
-print li2
+print("-"*100)
+print(li2)
 li3 = doc('li:nth-child(2)')
-print "-"*100
-print li3
+print("-"*100)
+print(li3)
 li4 = doc('li:gt(2)')
-print "-"*100
-print "**"
-print li4
+print("-"*100)
+print("**")
+print(li4)
 li5 = doc('li:nth-child(2n)')
-print "-"*100
-print li5
+print("-"*100)
+print(li5)
 
 
