@@ -17,6 +17,8 @@ async def main():
     page = await browser.newPage()
     await page.setViewport({'width': width, 'height': height}) 
     await page.goto('https://www.fxstreet.com/news')
+
+    
     ## 滚动到页面底部
     await page.screenshot({path: 'example.png'})
     #await page.evaluate('window.scrollBy(0,window.innerHeight)')  # 滚动到页面底部
